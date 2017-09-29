@@ -14,7 +14,11 @@ body {
 
 }
 
-.header {
+.container{
+  background: yellow;
+}
+
+.div_header {
   padding: 5px 10px;
   text-align: center;
   display: flex;
@@ -24,18 +28,32 @@ body {
   border-bottom: solid 2px #444;
 }
 
-.header h1 {
+.div_header h1 {
   flex-grow: 1;
   font-size: 1.5em;
   letter-spacing: 3px;
   font-weight: normal;
 }
 
-.header .stats,
-.header .stopwatch {
+.div_header .stats,
+.div_header .stopwatch {
   width: 170px;
 }
 
+   #player {
+     background-color: #222;
+     padding: 7px 8px;
+     color: #999;
+     letter-spacing: 2px;
+     font-weight: bold;
+     text-shadow: none;
+     text-transform: uppercase;
+    }
+
+li{
+   list-style: none;
+   height: 90px;
+}
 .stats {
   margin-top: 0;
   font-weight: normal;
@@ -55,7 +73,7 @@ body {
 
 .stopwatch {
   padding: 15px 10px 5px 10px;
-  margin: -5px -10px -5px 10px;
+  margin: -5px -10px -5px 250px;
   background: #2f2f2f;
   border-radius: 0 15px 0 0;
 }
@@ -117,7 +135,7 @@ body {
 
   .player-score {
     width: 190px;
-    background: blue;
+
   }
 
   .counter {
@@ -138,7 +156,7 @@ body {
   }
 
   .counter-action.increment {
-    background: #66BB6A;
+    background: grey;
   }
 
   .counter-action.increment:hover {
@@ -147,7 +165,7 @@ body {
   }
 
   .counter-action.decrement {
-    background: #ef5350;
+    background: red;
   }
 
   .counter-action.decrement:hover {
@@ -216,3 +234,4 @@ body {
     color: #fafafa;
     cursor: pointer;
   }
+
