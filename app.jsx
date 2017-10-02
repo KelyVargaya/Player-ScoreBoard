@@ -24,14 +24,17 @@ const Header = ({ players }) => {
   }
   return (
     <section className="div_header" >
+      <table className='stats'>
+      <tr>
       <td>PLAYERS:
         <h3>{players.length}</h3>
       </td>
       <td className="stats">TOTAL POINTS: 
         <h3>{score}</h3>
       </td>
+        </tr>
       {stopWatch()}
-
+      </table>
     </section>
   );
 }
