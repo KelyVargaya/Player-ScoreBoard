@@ -16,25 +16,6 @@ let PLAYERS = [
   },
 ];
 
-const stopWatch = () => {
-  let cont = 0;
-  return (
-    <div className="stopwatch container">
-      <h2>STOPWATCH</h2>
-      <p className="stopwatch-time">{cont}</p>
-       <div className="row">
-        <div className="col-lg-6 col-md-6 col-xs-6">
-          <button>START</button>
-        </div>
-        <div className="col-lg-6 col-md-6 col-xs-6">
-          <button>RESET</button>
-        </div>
-      </div>
-    </div>
-
-  );
-}
-
 const Header = ({ players }) => {
   
   let score = 0;
@@ -55,7 +36,27 @@ const Header = ({ players }) => {
   );
 }
 
-const getPlayersList = (players) => {
+
+const stopWatch = () => {
+  let cont = 0;
+  return (
+    <div className="stopwatch container">
+      <h2>STOPWATCH</h2>
+      <p className="stopwatch-time">{cont}</p>
+       <div className="row">
+        <div className="col-lg-6 col-md-6 col-xs-6">
+          <button>START</button>
+        </div>
+        <div className="col-lg-6 col-md-6 col-xs-6">
+          <button>RESET</button>
+        </div>
+      </div>
+    </div>
+
+  );
+}
+
+const ShowList = (players) => {
   return players.map((player, index) => {
     return (
       <li key={index}>
@@ -81,7 +82,7 @@ const getPlayersList = (players) => {
 const PlayerList = ({ players }) => {
   return (
     <div>
-      <ol>{getPlayersList(players)}</ol>
+      <ol>{ShowList(players)}</ol>
     </div>
   );
 }
