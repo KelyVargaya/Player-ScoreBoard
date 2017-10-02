@@ -17,16 +17,16 @@ let PLAYERS = [
 ];
 
 const stopWatch = () => {
-  let contador = 0;
+  let cont = 0;
   return (
     <div className="stopwatch container">
       <h2>STOPWATCH</h2>
-      <p className="stopwatch-time">{contador}</p>
+      <p className="stopwatch-time">{cont}</p>
        <div className="row">
-        <div className="col-md-6">
+        <div className="col-lg-6 col-md-6 col-xs-6">
           <button>START</button>
         </div>
-        <div className="col-md-6">
+        <div className="col-lg-6 col-md-6 col-xs-6">
           <button>RESET</button>
         </div>
       </div>
@@ -36,18 +36,22 @@ const stopWatch = () => {
 }
 
 const Header = ({ players }) => {
+  
   let score = 0;
-  let playersNum = players.length;
   for (var i = 0; i < players.length; i++) {
-    score += parseInt(players[i].score);
+    score += players[i].score;
   }
   return (
-    <div className="div_header" >
-      <td>PLAYERS: <h1 >{playersNum}</h1></td>
-      <td className="stats">TOTAL POINTS: <h1 >{score}</h1></td>
+    <section className="div_header" >
+      <td>PLAYERS:
+        <h3>{players.length}</h3>
+      </td>
+      <td className="stats">TOTAL POINTS: 
+        <h3>{score}</h3>
+      </td>
       {stopWatch()}
 
-    </div>
+    </section>
   );
 }
 
@@ -55,7 +59,7 @@ const getPlayersList = (players) => {
   return players.map((player, index) => {
     return (
       <li key={index}>
-        <div className="player">
+        <section className="player">
           <p className="player-name ">{player.name}</p>
           <div className="counter">
             <button className= "counter-action decrement btn-danger"> 
@@ -64,10 +68,10 @@ const getPlayersList = (players) => {
             <p className= "counter-score">{player.score}</p>
             <button className= "counter counter-action increment btn-success">
               +
-              </button>
+            </button>
           </div>
-        </div>
-      </li >
+        </section>
+      </li>
 
     );
   });
@@ -77,21 +81,21 @@ const getPlayersList = (players) => {
 const PlayerList = ({ players }) => {
   return (
     <div>
-      <ul>{getPlayersList(players)}</ul>
+      <ol>{getPlayersList(players)}</ol>
     </div>
   );
 }
 
 const PlayerForm = () => {
   return (
-    <div className="add-player-form">
+    <section className="add-player-form">
       <form action="">
         <input type="text"/>
         <button id="player">
-          ADD PLAYER
+          Add Player
         </button>
       </form>
-    </div>
+    </section>
   );
 }
 
